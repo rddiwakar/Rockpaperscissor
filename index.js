@@ -19,26 +19,27 @@ function rock(event){
     let random = arr[Math.floor(Math.random() * arr.length)];
 
     if("rock" === random) {
-        result.innerText ="It was a draw! You both chose Rock";
+        result.innerHTML ="It was a draw! You both chose Rock";
         rockImg.style.background = "grey";
 
     } else if(random === "paper"){
-        result.innerText = "Paper (comp) beats Rock (user). You lose! ";
+        result.innerHTML = "Paper (comp) beats Rock (user). You lose! <audio autoplay src = 'Assets/sound2.mp3'></audio>";
         rockImg.style.background = "red";
         computeradd+= 1
     }else{
-        result.innerText = "Rock (user) beats Scissor (comp). You win!";
+        result.innerHTML = "Rock (user) beats Scissor (comp). You win!<audio autoplay src = 'Assets/sound1.mp3'></audio> ";
         rockImg.style.background = "green";
         useradd += 1;
     }
     displayScore.innerHTML  = `${useradd}:${computeradd}`;
     if (computeradd == 10 ){
-        displayScore.innerHTML  = `${useradd}:${computeradd}<br> You Lose, Try again...`
+        displayScore.innerHTML  = `${useradd}:${computeradd}<br> You Lose, Try again...<audio autoplay src = "Assets/sound4.mp3"></audio>`
         useradd = 0;
         computeradd = 0
         
     }else if(useradd == 10){
-        displayScore.innerHTML  = `${useradd}:${computeradd}<br>You born Champion`
+        displayScore.innerHTML  = `${useradd}:${computeradd}<br> You born winner!<audio autoplay src="Assets/sound3.mp3"></audio>`
+
         useradd = 0;
         computeradd =0
         
@@ -51,24 +52,24 @@ function paper(event){
     let random = arr[Math.floor(Math.random() * arr.length)];
 
     if("paper" === random) {
-        result.innerText ="It was a draw! You both chose Paper";
+        result.innerHTML ="It was a draw! You both chose Paper";
         paperImg.style.background = "grey"
     } else if(random === "scissors"){
-        result.innerText = "Scissor (comp) beats Paper (user). You lose! ";
+        result.innerHTML = "Scissor (comp) beats Paper (user). You lose! <audio autoplay src = 'Assets/sound2.mp3'></audio>";
         paperImg.style.background = "red";
         computeradd += 1;
     }else{
-        result.innerText = "Paper (user) beats Rock (comp). You win!";
+        result.innerHTML = "Paper (user) beats Rock (comp). You win! <audio autoplay src = 'Assets/sound1.mp3'></audio>";
         paperImg.style.background = "green";
         useradd += 1;
     }
     displayScore.innerHTML  = `${useradd}:${computeradd}`
     if (computeradd == 10 ){
-        displayScore.innerHTML  = `${useradd}:${computeradd}<br> Better luck next time!`
+        displayScore.innerHTML  = `${useradd}:${computeradd}<br> Better luck next time!<audio autoplay src = "Assets/sound4.mp3"></audio>`
         useradd = 0;
         computeradd = 0
     }else if(useradd == 10){
-        displayScore.innerHTML  = `${useradd}:${computeradd} <br>Congratulations on the big win! Enjoy your success`
+        displayScore.innerHTML  = `${useradd}:${computeradd} <br>Congratulations on the big win! Enjoy your success<audio autoplay src="Assets/sound3.mp3"></audio>`
         useradd = 0;
         computeradd = 0
     }
@@ -84,22 +85,22 @@ function scissor(event){
         result.innerText ="It was a draw! You both chose Scissor";
         scissorImg.style.background = "grey";
     } else if(random === "rock"){
-        result.innerText = "Rock (comp) beats Scissor (user). You lose! ";
+        result.innerHTML = "Rock (comp) beats Scissor (user). You lose! <audio autoplay src = 'Assets/sound2.mp3'></audio>";
         scissorImg.style.background = "red";
         computeradd += 1;
     }else{
-        result.innerText = "Scissor (user) beats Paper (comp). You win!";
+        result.innerHTML = "Scissor (user) beats Paper (comp). You win!<audio autoplay src = 'Assets/sound1.mp3'></audio>";
         scissorImg.style.background = "green";
         useradd += 1;
     }
     displayScore.innerHTML  = `${useradd}:${computeradd}`;
 
     if (computeradd == 10 ){
-        displayScore.innerHTML  = `${useradd}:${computeradd} <br>You Lose, try your luck next time`;
+        displayScore.innerHTML  = `${useradd}:${computeradd} <br>You Lose, try your luck next time<audio autoplay src = "Assets/sound4.mp3"></audio>`;
         useradd = 0;
         computeradd = 0
     }else if(useradd == 10){
-        displayScore.innerHTML  = `${useradd}:${computeradd} <br> You are Champion"`
+        displayScore.innerHTML  = `${useradd}:${computeradd} <br> You are Champion<audio autoplay src="Assets/sound3.mp3"></audio>`
         useradd = 0;
         computeradd = 0;
     }
